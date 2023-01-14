@@ -8,17 +8,27 @@ public class BandViz : MonoBehaviour
     public float startScale, scaleMultiplier;
     Material material;
 
-    // Start is called before the first frame update
     void Start()
     {
         material = GetComponent<MeshRenderer>().materials[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(transform.localScale.x, (AudioProc.frequencyBandBuffer[band] * scaleMultiplier) + startScale, transform.localScale.z);
-        Color newColor = new Color(AudioProc.audioBandBuffer[band], AudioProc.audioBandBuffer[band], AudioProc.audioBandBuffer[band]);
-        material.SetColor("_Color", newColor);
+
+        if (AudioProc.audioSource.clip)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, (AudioProc.frequencyBandBuffer[band] * scaleMultiplier) + startScale, transform.localScale.z);
+            Color newColor = new Color(AudioProc.audioBandBuffer[band], AudioProc.audioBandBuffer[band], AudioProc.audioBandBuffer[band]);
+            material.SetColor("_Color", newColor);
+        }
+        else
+        {
+            //reset scale of the bands
+            transform.localScale = new Vector3(transform.localScale.x, startScale, transform.localScale.z);
+            // set the color to white
+            material.SetColor("_Color", Color.white);
+        }
+
     }
 }

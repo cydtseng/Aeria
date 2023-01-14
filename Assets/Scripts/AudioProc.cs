@@ -10,7 +10,7 @@ public class AudioProc : MonoBehaviour
     private float[] bufferDecrease = new float[NUM_FREQUENCY_BANDS];
     private float[] freqBandHighest = new float[NUM_FREQUENCY_BANDS];
 
-    public AudioSource audioSource;
+    public static AudioSource audioSource;
     public static float[] samples = new float[NUM_SAMPLES];
     public static float[] frequencyBands = new float[NUM_FREQUENCY_BANDS];
     public static float[] frequencyBandBuffer = new float[NUM_FREQUENCY_BANDS];

@@ -17,7 +17,6 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField]
     public AudioSource audioSource;
 
-
     private Vector3 originalPos;
 
     void Start()
@@ -34,9 +33,6 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             //start playing the associated soundtrack
             audioSource.clip = associatedAudioClip;
             audioSource.Play();
-
-            //modify the album image display
-
         }
     }
 
@@ -47,20 +43,17 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             //stop the associated soundtrack
             audioSource.Stop();
-
-            //modify the album image display
-
+            audioSource.clip = null;
         }
     }
 
     public void HandleStart()
     {
-        Initiate.Fade(sceneToLoad, Color.black, 2.0f);
+        Initiate.Fade(sceneToLoad, Color.black, 1.5f);
     }
 
     public void HandleQuit()
     {
         Application.Quit();
     }
-
 }
