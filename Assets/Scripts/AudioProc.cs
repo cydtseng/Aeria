@@ -11,7 +11,7 @@ public class AudioProc : MonoBehaviour
     private float[] freqBandHighest = new float[NUM_FREQUENCY_BANDS];
 
     public AudioSource audioSource;
-    public static float[] samples = new float[NUM_FREQUENCY_BANDS];
+    public static float[] samples = new float[NUM_SAMPLES];
     public static float[] frequencyBands = new float[NUM_FREQUENCY_BANDS];
     public static float[] frequencyBandBuffer = new float[NUM_FREQUENCY_BANDS];
     public static float[] audioBands = new float[NUM_FREQUENCY_BANDS];
@@ -25,10 +25,13 @@ public class AudioProc : MonoBehaviour
 
     void Update()
     {
-        GetSpectrumAudioSource();
-        MakeFrequencyBands();
-        BandBuffer();
-        CreateAudioBands();
+        if (audioSource.clip != null)
+        {
+            GetSpectrumAudioSource();
+            MakeFrequencyBands();
+            BandBuffer();
+            CreateAudioBands();
+        }
     }
 
     void GetSpectrumAudioSource()

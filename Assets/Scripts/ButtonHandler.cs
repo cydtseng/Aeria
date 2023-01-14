@@ -32,7 +32,8 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (isTrackSelectorButton)
         {
             //start playing the associated soundtrack
-            audioSource.PlayOneShot(associatedAudioClip, 0.1f);
+            audioSource.clip = associatedAudioClip;
+            audioSource.Play();
 
             //modify the album image display
 
