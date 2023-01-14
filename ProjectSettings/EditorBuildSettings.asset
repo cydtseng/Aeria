@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/TrackSelection.unity
+    guid: d33faa08609c3f34ca3769b61691b679
+  - enabled: 1
+    path: Assets/Scenes/CityLightsScene.unity
+    guid: c00083e8d011dd34a9a1e0c369844264
+  - enabled: 1
+    path: Assets/Scenes/NothingForMeScene.unity
+    guid: 2bf05d3a96b1f4e4bb25e107cc5a35a2
+  - enabled: 1
+    path: Assets/Scenes/SomeoneToRelyOnScene.unity
+    guid: ea0bc26ec8bfd1c4cbd5934ad086c7ca
   m_configObjects: {}
