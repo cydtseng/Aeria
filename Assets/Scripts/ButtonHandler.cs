@@ -54,7 +54,7 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void HandleStart()
     {
-        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+        Initiate.Fade(sceneToLoad, Color.black, 2.0f);
     }
 
     public void HandleQuit()
